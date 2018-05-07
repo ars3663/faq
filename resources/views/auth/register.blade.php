@@ -54,6 +54,17 @@
                                 </button>
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <label for="type" class="col-md-4 control-label" >User Type:</label>
+                            <div class="col-md-6">
+                                <select class="form-control"  id="type">
+                                    <option value="admin">Admin</option>
+                                    <option value="super_admin">Super Admin</option>
+                                    <option value="member">Member</option>
+                                </select>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
