@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.user')
 
 @section('content')
 <div class="container">
@@ -52,17 +52,6 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="role" class="col-md-8 control-label" >User Type:</label>
-                            <div class="col-md-8">
-                                <select class="form-control"  name="role">
-                                    <option value="admin">Admin</option>
-                                    <option value="super_admin">Super Admin</option>
-                                    <option value="member">Member</option>
-                                </select>
                             </div>
                         </div>
                     </form>

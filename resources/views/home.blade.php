@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.user')
 
 @section('content')
     <div class="container">
@@ -48,15 +48,6 @@
                             <div class="float-right">
                                 {{ $questions->links() }}
                             </div>
-                        </div>
-
-                    </div>
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Dashboard</div>
-                        <div class="panel-body">
-
-                            You are logged in! as <strong>{{ strtoupper(Auth::user()->role) }}</strong>
                         </div>
 
                     </div>
