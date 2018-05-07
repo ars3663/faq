@@ -28,25 +28,20 @@ Route::patch('/questions/{question_id}/answer/{answer_id}', 'AnswerController@up
 Route::delete('/questions/{question_id}/answer/{answer_id}', 'AnswerController@destroy')->name('answers.destroy');
 Route::resources([
     'questions' => 'QuestionController',
-
 ]);
 
+Route::get('/getuserTable', 'AdminController@get_user_table');
+Route::get('/getQuestion', 'AdminController@get_question_table');
+Route::get('/getAnswer', 'AdminController@get_answer_table');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
-{
-    Route::match(['get', 'post'], '/adminOnlyPage/', 'HomeController@admin');
-
-});
-
-Route::group(['middleware' => 'App\Http\Middleware\MemberMiddleware'], function()
-{
-    Route::match(['get', 'post'], '/memberOnlyPage/', 'HomeController@member');
-
-});
-
-Route::group(['middleware' => 'App\Http\Middleware\SuperAdminMiddleware'], function()
-{
-    Route::match(['get', 'post'], '/superAdminOnlyPage/', 'HomeController@super_admin');
-
+Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::get('/', 'HomeController@index');
+    Route::get('/getuserTable', 'AdminController@get_user_table');
+    Route::get('/getQuestion', 'AdminController@get_question_table');
+    Route::get('/getAnswer', 'AdminController@get_answer_table');
+    Route::get('/question', 'HomeController@question');
+    Route::post('/deleteUser', 'AdminController@delete_user');
+    Route::post('/deleteQuestion', 'AdminController@remove_question');
+    Route::post('/deleteAnswer', 'AdminController@remove_answer');
 });
