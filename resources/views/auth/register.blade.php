@@ -56,9 +56,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="type" class="col-md-4 control-label" >User Type:</label>
-                            <div class="col-md-6">
-                                <select class="form-control"  id="type">
+                            <label for="role" class="col-md-8 control-label" >User Type:</label>
+                            <div class="col-md-8">
+                                <select class="form-control"  name="role">
                                     <option value="admin">Admin</option>
                                     <option value="super_admin">Super Admin</option>
                                     <option value="member">Member</option>
